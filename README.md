@@ -1,2 +1,2 @@
-# java
-Assignments from the academy and courses in Java.
+## Java tasks
+Assignments from the academy, courses and internet implemented in Java.
