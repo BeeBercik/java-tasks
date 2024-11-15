@@ -1,4 +1,4 @@
-package ZONE.test;
+package Threads.RunnableAndThreadTakieSame.withExtendsThread;
 
 class MyThread extends Thread {
     private String name;
