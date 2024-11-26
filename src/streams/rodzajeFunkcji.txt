@@ -1,0 +1,37 @@
+Rodzaje funkcji Java
+Każdy z nich to interfejs funkcyjny z jedna metoda (to ja opisuje w podpunktach)
+
+Np w streamach jako lambda my podajemy definicje tych metod interfejsów	np jeśli metoda stream przyjmuje Predicate to lambda musi przedstawić ta funkcje boolean test(T t), czyli podajemy ciało przyjmujące 1 argument a zwracające boolean
+np. stream.filter((i) -> i > 5); jeśli zwróci true to takie i jest zapisywane w strumieniu który zostanie zwrócony.
+
+1. Zwykl. Funkcja
+Przyjmuje x  zwraca y
+WAZNE
+W dokumentacji Function to interface Function<T, R> bo 1szy typ to jaki przyjmuje a 2gi jaki zwraca: ma metole R apply(T t); która zwraca właśnie ten 2gi typ a przyjmuje 1szy
+
+List<String> names = List.of("John", "Jane", "Anna");
+List<Integer> lengths = names.stream()
+                             .map(name -> name.length()) // Function<String, Integer>
+                             .toList();
+System.out.println(lengths); // [4, 4, 4]
+
+2. Unary operator
+Przyjmuje taki sam typ parametru jaki zwraca np przyjmuje string X i zwraca typ string y
+
+List<Integer> numbers = List.of(1, 2, 3);
+List<Integer> doubled = numbers.stream()
+                               .map(n -> n * 2) // UnaryOperator<Integer>
+                               .toList();
+System.out.println(doubled); // [2, 4, 6]
+
+3. Bi funkcja
+Przyjmuje dwa parametry dwóch różnych typów a zwraca jedna wartość jeszcze innego, trzeciego typu
+
+4. Predictat
+To metoda/funkcja która przyjmuje jeden argumentboolean
+
+5. Consumer
+Przyjmuje jakiś argument,  robi cos z nim i nic nie zwraca.
+
+6. Supplier
+Nie przyjmuje parametrów ale cos zwraca
